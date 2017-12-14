@@ -5,6 +5,7 @@
  * @param {Array} // [1,2,3]
  * @return {Array} // [2,4,6]
  */
+
 var doubleArray = function(arr) {
   var result = [];
   for (var i = 0; i < arr.length; i++) {
@@ -12,7 +13,6 @@ var doubleArray = function(arr) {
   }
   return result;
 };
-
 
 /* #sumArrays
  *
@@ -22,6 +22,7 @@ var doubleArray = function(arr) {
  * @param {Array}
  * @return {Bool}
  */
+
 var sumArrays = function(arr1, arr2){
   var num1 = 0;
   var num2 = 0;
@@ -38,7 +39,6 @@ var sumArrays = function(arr1, arr2){
 
 };
 
-
 /* #stringCount
  *
  * Takes in a string and returns the length of the string.
@@ -50,8 +50,6 @@ var stringCount = function(string){
   return string.length;
 };
 
-
-
 /* #arrayLength
  *
  * Takes in an array and returns the length of the array.
@@ -59,7 +57,10 @@ var stringCount = function(string){
  * @param {String}
  * @return {Number}
  */
-var arrayLength;
+
+var arrayLength = function(arr3){
+  return arr3.length;
+};
 
 /* #countAll
  *
@@ -402,7 +403,7 @@ module.exports = {
   doubleArray: doubleArray,
   sumArrays: sumArrays, 
   stringCount: stringCount,
-  arrayLength: null,
+  arrayLength: arrayLength,
   countAll: null,
   countStrings: null,
   countAllStrings: null,
