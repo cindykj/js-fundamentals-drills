@@ -89,13 +89,10 @@ var countAll = function(arr){
 var countStrings = function(arr){
   var strLength = [];
   for (var i = 0; i < arr.length; i++){
-    strLength.push(arr[i].length);
-
+    strLength[i] = arr[i].length;
   }
   return strLength;
 };
-
-
 
 /* #countAllStrings
  *
@@ -104,7 +101,15 @@ var countStrings = function(arr){
  * @param {String}
  * @return {Number}
  */
-var countAllStrings;
+
+var countAllStrings = function(arr) {
+  var allLength = [];
+  var sum = 0;
+  for (var i = 0; i < arr.length; i++) {
+    sum += arr[i].length;
+  }
+  return sum;
+};
 
 /* #convertToArray
  *
@@ -113,7 +118,11 @@ var countAllStrings;
  * @param {Object}
  * @return {Array}
  */
-var convertToArray;
+
+var convertToArray = function(obj) {
+  var result = Object.values(obj)
+  return result;
+};
 
 /* #objectSize
  *
@@ -203,7 +212,15 @@ var getKeys;
  * @param {String}
  * @return {Number}
  */
-var sumAllPositive;
+// var sumAllPositive = function(nums) {
+//   var return = 0;
+//     for (var i = 0; i < nums.length; i++) {
+//       if (nums[i] > 0) {
+//         result += nums[i]
+//       }
+//     }
+//   return result;
+// }
 
 /* #stringCountBelowThree
  *
@@ -384,7 +401,23 @@ var arrayToObjectNums;
  * @param {String}
  * @return {Object}
  */
-var stringToKeys;
+// var stringToKeys = function(str){
+//   var result = {}
+//   var splitted = str.split('');
+//   for (var i = 0; i < splitted.length; i++);
+   // result[] //result.something is the same is result[] must use [] because when you .mykey it will search for it and it just ewon't be there
+  // result [splitted[i]] = true;
+
+
+  // return result;
+
+
+  //can return an object literal {} 'empty object.'
+  // { hello: 'world'} this cannot be accessed yet as it's not assigned to a variable
+// }
+
+//key1: 'blah' // key1 is key, blah is value. can also be called indexes. key value pairs
+
 
 /* #charCountMap
  *
@@ -423,8 +456,8 @@ module.exports = {
   arrayLength: arrayLength,
   countAll: countAll,
   countStrings: countStrings,
-  countAllStrings: null,
-  convertToArray: null,
+  countAllStrings: countAllStrings,
+  convertToArray: convertToArray,
   objectSize: null,
   createZeroFilledArray: null,
   poppedArray: null,
