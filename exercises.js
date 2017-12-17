@@ -131,7 +131,10 @@ var convertToArray = function(obj) {
  * @param {Object}
  * @return {Number}
  */
-var objectSize;
+var objectSize = function(obj) {
+  var result = Object.values(obj).length
+  return result;
+};
 
 /* #createZeroFilledArray
  *
@@ -140,7 +143,15 @@ var objectSize;
  * @param {Number}
  * @return {Zero}
  */
-var createZeroFilledArray;
+
+var createZeroFilledArray = function(num) {
+  var arr = [];
+  for (var i = 0; i < num; i++)
+    arr[i] = 0;
+    return arr;
+  // var result = arr.fill(arr, 0);
+  // return result;
+};
 
 /* #poppedArray
  *
@@ -458,8 +469,8 @@ module.exports = {
   countStrings: countStrings,
   countAllStrings: countAllStrings,
   convertToArray: convertToArray,
-  objectSize: null,
-  createZeroFilledArray: null,
+  objectSize: objectSize,
+  createZeroFilledArray: createZeroFilledArray,
   poppedArray: null,
   splitString: null,
   lengthOfLast: null,
