@@ -131,6 +131,7 @@ var convertToArray = function(obj) {
  * @param {Object}
  * @return {Number}
  */
+
 var objectSize = function(obj) {
   var result = Object.values(obj).length
   return result;
@@ -197,7 +198,15 @@ var lengthOfLast = function(str) {
  * @param {Array}
  * @return {Number}
  */
-var sumBelowTen;
+var sumBelowTen = function(arr) {
+  var sum = 0;
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i] <= 10) {
+      sum += arr[i];
+    }
+  }
+  return sum;
+}
 
 /* #moreThanTenLetters
  *
@@ -206,7 +215,16 @@ var sumBelowTen;
  * @param {String}
  * @return {Number}
  */
-var moreThanTenLetters;
+
+var moreThanTenLetters = function(arr) {
+  var result = 0;
+  for (var i = 0; i < arr.length; i++){
+    if (arr[i].length > 10) {
+      result ++;
+    }
+  }
+  return result;
+};
 
 /* #multiplyAll
  *
@@ -484,8 +502,8 @@ module.exports = {
   poppedArray: poppedArray,
   splitString: splitString,
   lengthOfLast: lengthOfLast,
-  sumBelowTen: null,
-  moreThanTenLetters: null,
+  sumBelowTen: sumBelowTen,
+  moreThanTenLetters: moreThanTenLetters,
   multiplyAll: null,
   getKeys: null,
   sumAllPositive: null,
