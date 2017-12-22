@@ -280,7 +280,15 @@ var sumAllPositive = function(num) {
  * @param {Array}
  * @return {Number}
  */
-var stringCountBelowThree;
+var stringCountBelowThree = function(arr) {
+  var result = 0; 
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i].length <= 3) {
+      result += 1
+    }
+  }
+return result;
+};
 
 /* #countObjects
  *
@@ -289,7 +297,15 @@ var stringCountBelowThree;
  * @param {Array}
  * @return {Number}
  */
-var countObjects;
+var countObjects = function(arr) {
+  var result = 0;
+  for (var i = 0; i < arr.length; i++) {
+    if (typeof arr[i] === 'object') {
+      result += 1;
+    }
+  }
+  return result;
+}
 
 /* #getObjectKeys
  *
@@ -298,7 +314,10 @@ var countObjects;
  * @param {Object}
  * @return {Array}
  */
-var getObjectKeys;
+var getObjectKeys = function(obj) {
+  return Object.keys(obj);
+
+};
 
 /* #getObjectValues
  *
@@ -307,7 +326,9 @@ var getObjectKeys;
  * @param {Object}
  * @return {Array}
  */
-var getObjectValues;
+var getObjectValues = function(obj) {
+  return Object.values(obj);  
+};
 
 /* #makeObject
  *
@@ -317,7 +338,11 @@ var getObjectValues;
  * @param {String}
  * @return {Object}
  */
-var makeObject;
+var makeObject = function(key, value) {
+  var obj = {};
+  obj[key] = value;
+  return obj;
+};
 
 /* #makeObjectReverse
  *
@@ -327,7 +352,11 @@ var makeObject;
  * @param {String}
  * @return {Bool}
  */
-var makeObjectReverse;
+var makeObjectReverse = function(key, value) {
+  var obj = {};
+  obj[value] = key;
+  return obj;
+};
 
 /* #tupleToObject
  *
@@ -336,7 +365,12 @@ var makeObjectReverse;
  * @param {Array}
  * @return {Object}
  */
-var tupleToObject;
+var tupleToObject = function(arr) {
+  var obj = {
+    [arr[0]]: arr[1]
+  }
+  return obj;
+};
 
 /* #tupleToObjectReverse
  *
@@ -345,7 +379,12 @@ var tupleToObject;
  * @param {Array}
  * @return {Object}
  */
-var tupleToObjectReverse;
+var tupleToObjectReverse = function(arr) {
+  var obj = {
+    [arr[1]]: arr[0]
+  }
+  return obj;
+};
 
 /* #strToKeys
  *
@@ -354,7 +393,13 @@ var tupleToObjectReverse;
  * @param {Array}
  * @return {Object}
  */
-var strToKeys;
+var strToKeys = function(arr) {
+  var obj = {};
+  for(var i = 0; i < arr.length; i++){
+    obj[arr[i]] = 0;
+  }
+  return obj;
+};
 
 /* #getValues
  *
@@ -519,15 +564,15 @@ module.exports = {
   multiplyAll: multiplyAll,
   getKeys: getKeys,
   sumAllPositive: sumAllPositive,
-  stringCountBelowThree: null,
-  countObjects: null,
-  getObjectKeys: null,
-  getObjectValues: null,
-  makeObject: null,
-  makeObjectReverse: null,
-  tupleToObject: null,
-  tupleToObjectReverse: null,
-  strToKeys: null,
+  stringCountBelowThree: stringCountBelowThree,
+  countObjects: countObjects,
+  getObjectKeys: getObjectKeys,
+  getObjectValues: getObjectValues,
+  makeObject: makeObject,
+  makeObjectReverse: makeObjectReverse,
+  tupleToObject: tupleToObject,
+  tupleToObjectReverse: tupleToObjectReverse,
+  strToKeys: strToKeys,
   getValues: null,
   // getKeys: null,
   objectToArray: null,
